@@ -81,3 +81,37 @@ p {
     font-size: 1.5rem;
   }
 }
+
+/* Badages */
+
+.badage {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+
+.badage--primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.badage--secdonary {
+  background: var(--color-secdonary);
+  color: white;
+}
+
+.badage--small {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .badage {
+    font-size: 1.5rem;
+  }
+
+  .badage--small {
+    font-size: 1.2rem;
+  }
+}
