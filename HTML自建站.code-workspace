@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "..\\Moshify"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "HTML自建站"
+  }
+}
