@@ -1,0 +1,373 @@
+:root {
+  --color-primary: #0acd68;
+  --color-secdonary: #8d8d8d;
+  --color-primaryColor: black;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "MISans Regular";
+  padding: 2rem;
+  background-image: url(../images/body-back.jpg);
+  background-repeat: no-repeat;
+  /* background-size: 1290px px; */
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primaryColor);
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+/* 浏览器的导航区域 */
+
+.header {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.header__logo {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  flex: 1;
+}
+
+.header__font {
+  display: flex;
+  font-size: 1.3rem;
+}
+
+.header__font-nav {
+  padding: 0 1.5rem;
+  margin-top: 1.3rem;
+}
+.header__icon {
+  line-height: 1rem;
+}
+.nav-hover:hover {
+  color: var(--color-primary) !important;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-size: 100%;
+  }
+  .header__font {
+    justify-content: right;
+  }
+
+  /* 字体大小 */
+  .header__font-nav {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .header__logo {
+    font-size: 3.2rem;
+    color: var(--color-primaryColor);
+  }
+
+  /* 搜索图标隐藏 */
+  .header__icon {
+    display: none;
+  }
+}
+
+/* banner */
+.banner {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    display: block;
+    width: 100%;
+    height: 10rem;
+    background: url(../images/background.jpg);
+    object-fit: fill;
+    border-radius: 2rem;
+    background-position: 0 -35rem;
+    background-size: 100%;
+  }
+}
+
+/* slogan */
+.slogan {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .slogan {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 2rem 0 5rem;
+  }
+
+  .slogan::after,
+  .slogan::before {
+    content: " ---------- ";
+  }
+}
+
+.content__status {
+  display: none;
+}
+
+.content__article-and-search {
+  display: none;
+}
+
+.box-shadow {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* 文章板块 */
+.article {
+  /* width: 100%; */
+  padding: 2rem 4rem 1rem;
+  margin: 3rem 0;
+  background-color: white;
+  border-radius: 2rem;
+  transition: background 0.5s, color 0.5s;
+}
+
+.article:hover {
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+}
+
+.article__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.article__description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-indent: 2ch;
+}
+
+/* 评论信息 */
+.article__info {
+  width: 100% !important;
+  display: flex;
+  flex: 1;
+  justify-content: right;
+}
+
+.article__info-normal-font-size {
+  font-size: 1.2rem;
+}
+
+.article__info-comment {
+  margin-left: 4rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* 内容 */
+@media screen and (min-width: 768px) {
+  .content {
+    display: grid;
+    grid-template-columns: 17.5rem 1fr;
+  }
+
+  .content__status {
+    display: block;
+    padding: 2rem;
+    margin-right: 3.5rem;
+    background-color: #f7f7f7;
+    border-radius: 2rem;
+    height: 38rem;
+  }
+
+  .content__manager {
+    margin-bottom: 2.8rem;
+  }
+
+  .content__manager__title {
+    font-size: 1.7rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .content__number {
+    font-family: "MISans Medium";
+    font-size: 4.4rem;
+    color: var(--color-primary);
+  }
+
+  .content__unit {
+    font-size: 1.3rem;
+    margin-left: 0.9rem;
+    padding: 0.4rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+  }
+
+  .content__clock {
+    text-align: center;
+    padding: 1.3rem;
+    color: white;
+    border-radius: 2rem;
+    background-color: var(--color-primary);
+  }
+
+  .content__clock-week,
+  .content__clock-year {
+    font-size: 1.7rem;
+  }
+
+  .content__clock-times {
+    font-family: "MISans Medium";
+    font-size: 3rem;
+    margin: 0.9rem 0;
+  }
+
+  /* 文章和搜索框 */
+  .content__article-and-search {
+    font-size: 1.2rem;
+    width: 100%;
+    /* height: 3rem; */
+    background-color: white;
+    border-radius: 2rem;
+    padding: 0.4rem;
+    display: flex;
+  }
+  .content__search {
+    flex: 1;
+    /* text-align:  right; */
+  }
+  .search {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    margin-top: 0.2rem;
+    padding-left: 1rem;
+  }
+
+  .content__article-and-search:hover {
+    box-shadow: 0 0 20px 0 rgba(10, 205, 104, 0.5);
+  }
+
+  .content__button {
+    padding: 0.4rem 3rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+}
+
+/* 页码管理 */
+
+.page-number {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page-number {
+    display: flex;
+    justify-content: right;
+    font-size: 1.2rem;
+  }
+
+  .page__now {
+    margin: 0 2rem;
+  }
+
+  .page {
+    padding: 0 36%;
+  }
+}
+
+/* 文章内容点进去之后 */
+.article-object__title {
+  font-size: 5rem;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 1.7rem;
+  margin-bottom: 0;
+}
+
+.article-object__to-left {
+  justify-content: left;
+  margin-top: 2rem;
+  color: var(--color-secdonary);
+}
+
+.article-body {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  text-indent: 2ch;
+}
+
+.article-body p::first-letter {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+/* 分割线 */
+.specially {
+  width: 100%;
+  height: 0.5rem;
+  background: var(--color-primary);
+}
+
+/* 评论 */
+.comment {
+  margin-top: 2.5rem;
+  border-radius: 2rem;
+
+  background-color: #e5e5e5;
+  display: flex;
+  font-size: 1.8rem;
+}
+
+.comment-input {
+  flex: 1;
+}
+
+.comment__type-comment {
+  width: 100%;
+  padding: 2rem 0 2rem 2rem;
+  outline: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.comment-submit {
+  padding: 2rem 3rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 2rem;
+}
+
+/* 用户评论 */
+.comment-result {
+  font-size: 1.8rem;
+}
+
+.comment-result-user {
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-secdonary);
+  margin: 0;
+  padding: 2rem 0;
+}
