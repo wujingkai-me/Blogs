@@ -177,3 +177,21 @@ const vm = new Vue({
   components: { }
 })
 ```
+# 使用脚手架安装Vue
+安装**Vue/Cli**
+```
+npm install -g @vue/cli
+```
+卸载**Vue/Cli**
+```
+npm uninstall -g @vue/cli
+```
+---
+使用`Vue`脚手架创建项目
+```
+vue create TheFirstVue
+```
+启动项目
+```
+vue run sever
+```
