@@ -221,3 +221,17 @@ Vue的语法检查关闭，如果不关闭，在`main.js`定义一个没有被�
 ```javascript
 lintOnSave: false
 ```
+获取绑定了Vue属性的DOM节点
+```html
+<div @click="show" ref="title"></div>
+<script>
+  new Vue({
+    ...,
+    methods: {
+      show() {
+        console.log(this.$refs.title) // 原生的dom对象
+      }
+    }
+  })
+</script>
+```
