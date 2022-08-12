@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+  </head>
+  <body>
+    <!-- 
+        prevent 阻止默认行为
+        stop 阻止冒泡
+        once 只谈出一次框
+        capture 捕获模式
+        self e.target 是自己的时候才会执行
+        self.passtive 先执行浏览器的默认行为在执行回调函数
+     -->
+
+    <div id="root">
+      <h1>{{name}}</h1>
+      <a href="https://baidu.com" @click.prevent="showInfo">Baidu</a>
+    </div>
+
+    <div id="every">
+      <h1>{{ names }}</h1>
+      <div @click.capture="res">
+        结果2
+        <div @click="res">
+          结果1
+          <div @click="res">结果</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.configProductionTip = false;
+
+      new Vue({
+        el: "#root",
+        data: {
+          name: "123",
+        },
+        methods: {
+          showInfo() {
+            alert("显示信息");
+          },
+        },
+      });
+
+      new Vue({
+        el: "#every",
+        data: {
+          names: "测试机",
+        },
+        methods: {
+          res(e) {
+            console.log(e.target.innerText);
+          },
+        },
+      });
+      // alert();
+    </script>
+  </body>
+</html>

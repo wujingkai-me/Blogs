@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../js/vue.js"></script>
+    <!-- 
+        v-show: 布尔值控制元素的显示和隐藏 display：none
+        v-if: 确定内容是否显示，消失的很彻底
+            v-if-else, v-else, 其中v-if, v-if-else, v-else 其中不允许被打断
+            template 标签只能配合v-if
+     -->
+    <div id="root">
+      <h1 v-show="false">Welcome to {{ country }}</h1>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#root",
+        data: {
+          country: "China",
+        },
+      });
+    </script>
+  </body>
+</html>

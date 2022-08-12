@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <!-- 
+        1. 监视属性必须存在才可以监视
+        2. 第一种方式设置监视属性：语法格式为 watch: { 属性: { immediate: true, handler(newValue, oldValue){  } } }
+        3. immediate: 会立即执行回调函数 handler 会监视监视属性是否发生了变化
+        4. 第二种方式设置监视属性：vm.$watch("属性", {  }) 
+        5. deep：属性可以深级改变
+    -->
+  </head>
+  <body>
+    <div id="root">
+      <h1>今天天气很 {{ info }}</h1>
+      <button @click="change">切换天气</button>
+    </div>
+
+    <script>
+      Vue.config.productionTip = false;
+
+      new Vue({
+        el: "#root",
+        data: {
+          status: true,
+        },
+        methods: {
+          change() {
+            this.status = !this.status;
+          },
+        },
+        computed: {
+          info() {
+            return this.status ? "凉爽" : "炎热";
+          },
+        },
+        watch: {
+          status: {
+            immediate: true,
+            handler(n, o) {
+              console.log(n, "<====>", o);
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

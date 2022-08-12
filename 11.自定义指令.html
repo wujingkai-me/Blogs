@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            margin: 50px;
+
+        }
+        #root {
+            padding: 20px;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@2.7.0/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p v-bigger="n">n的值为：{{ n }}</p>
+        <p v-once>n初始值为：{{ n }}</p>
+        <br>
+        <button @click="n ++">Click</button>
+
+        <hr>
+        <input type="text" v-fbind:value="n" />
+        <!-- <button @click="">Click to focus.</button> -->
+    </div>
+</body>
+</html>
+<script>
+    Vue.config.productionTip = false
+
+    const vm = new Vue({
+        el: "#root",
+        data: {
+            n: 10
+        },
+        directives: {
+            bigger(element, binding){
+                // console.log( element.innerText, binding.value*10)
+                element.innerText = binding.value * 10
+                // this.n+=2
+            },
+            // fbind(element, binding) {
+            //     element.focus()
+            // }
+
+            fbind: {
+                bind(element, binding){
+                    // element.style.color = "black"
+                    console.log("bind")
+                    element.value = binding.value
+                },
+                inserted(element, binding){
+                    console.log("inserted")
+                    element.focus()
+                    console.log(binding.value)
+                },
+                update(element, binding) {
+                    console.log("update")
+                    element.style.color = "#CCC"
+                }
+                
+            }
+        }
+    })
+
+</script>

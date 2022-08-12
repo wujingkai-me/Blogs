@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>v-model</title>
+</head>
+<body>
+	<div id="root">
+		<form>
+			账号：	<input type="text" v-model="account" /> <br />
+			密码：	<input type="password" v-model="password" /> <br />
+			性别：
+			男：	<input type="radio" name="gender" value="male"/>
+			女：	<input type="radio" name="gender" value="female"> <br />
+			爱好：
+			学习 	<input type="checkbox" />
+			打游戏 	<input type="checkbox" />
+			吃饭 	<input type="checkbox" /> <br />
+			所属小区
+			<select>
+				<option value="">选择校区</option>
+				<option value="">1		</option>
+				<option value="">2		</option>
+				<option value="">3		</option>
+			</select>
+			<br />
+			其他信息
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+			<br />
+			<input type="checkbox" />
+			阅读并同意
+			<a href="">用户协议</a>
+
+		<button>提交</button>
+		</form>
+	</div>
+</body>
+</html>
+
+<script src="https://unpkg.com/vue@2.7.0/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: "#root",
+		data: {
+			account: "",
+			password: "",
+			sex: "123"
+		}
+	})
+
+	const vm = new Vue()
+
+</script>

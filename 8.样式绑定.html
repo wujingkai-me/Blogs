@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .change {
+        width: 200px;
+        height: 200px;
+        border: 1px solid darkgrey;
+      }
+      .normal {
+        width: 200px;
+        height: 200px;
+        background-color: lightgray;
+      }
+
+      .deep {
+        background-color: darkgray;
+        color: white;
+      }
+    </style>
+  </head>
+  <script src="../js/vue.js"></script>
+  <body>
+    <!-- 
+        class
+            :class 数组写法直接在数组中写样式的名称
+            :class 在数组中写对象的key { deep: true }
+        style
+            :style 对象写法在对象中写{ 样式名称: 值 }
+            :style 数组写法数组中的值是对象 { Obj1, Obj2 }
+     -->
+    <div id="root">
+      <div class="change" :style="{fontSize: 50 + 'px'}" @click="i">123123</div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#root",
+        data: {
+          a: "",
+        },
+        methods: {
+          i() {
+            this.a = "deep";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

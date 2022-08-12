@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 50px;
+
+        }
+        #root {
+            padding: 20px;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+        }
+    </style>
+    <style>
+        h1, h2, h3, h4, h5, h6{
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>🐷 Input: Text</h1>
+        <section name="inputText">
+            <input type="number" v-model.number="inputText"> &nbsp; &nbsp; &nbsp;
+            <span>inputText: {{ inputText }}</span>
+        </section>
+        <hr>
+        <h1>🐷 Input: Checkbox</h1>
+        <section>
+            <input type="checkbox" value="Hello" v-model="Checkbox" id="Hello"> 
+            <input type="checkbox" value="World" v-model="Checkbox"> World  &nbsp; &nbsp; &nbsp;
+            <span>Checkbox: {{ Checkbox }}</span>
+            <h2>💕For Example</h2>
+            <input type="checkbox" v-model="Checkbox1"> {{Checkbox1}}
+        </section>
+        <hr>
+        <h1>🐷 Input: Radio</h1>
+        <section>
+            <input type="radio" name="sex" value="Boy" v-model="Radio"> Boy
+            <input type="radio" name="sex" value="Girl" v-model="Radio"> Girl  &nbsp; &nbsp; &nbsp;
+            <span>Radio: {{ Radio }}</span>
+        </section>
+        <hr>
+        <h1>🐷 Input: Textarea</h1>
+        <section>
+            <textarea v-model="Textarea"></textarea>
+            <p style="white-space: pre-line">Textarea: {{ Textarea }}</p>
+        </section>
+    </div>
+</body>
+</html>
+<script src="https://unpkg.com/vue@2.7.0/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            inputText: '',
+            Checkbox: [],
+            Checkbox1: false,
+            Radio: '',
+            Textarea: ''
+        },
+        filters: {
+            cu(val){
+                return val + "Example"
+            }
+        },
+        watch: {
+            Checkbox(){
+                alert(123)
+            }
+        },
+        // 自定义指令v-big
+        directives: {
+            big(element, binding) {
+                console.log(element)
+                console.log(binding)
+            }
+        }
+    })
+
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .change {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@2.7.0/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>The N is {{ n }}</h2>
+        <button @click.once="add">Click me to add n</button>
+        <div class="change" :style="{opacity: value}"></div>
+        Set opcaity <input type="range" name="" v-model="value" max="1" step="0.01" > {{ value }}
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el: "#root",
+        data:{
+            n: 0,
+            n_flag: false,
+            value: 1
+        },
+        methods: {
+            add(){
+                this.n ++
+            }
+        },
+        beforeCreate() {
+            
+        },
+        created() {
+            
+        },
+        beforeMount() {
+            
+        },
+        mounted() {
+            
+        },
+        beforeUpdate() {
+            
+        },
+        updated() {
+            // 
+            // setTimeout(() => {
+            //     if(this.n_flag){
+            //         if(this.n != 0 ) this.n --
+            //         if(this.n === 0) this.n_flag = false
+            //     }
+            //     else{
+            //         if(this.n <= 100) this.n ++
+            //         if(this.n == 101) this.n_flag = true
+            //     }
+            // }, 100);
+            // 
+        },
+    })
+</script>

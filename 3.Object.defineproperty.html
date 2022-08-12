@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = 2;
+      let preson = {
+        name: "jack",
+        age: 20,
+      };
+
+      Object.defineProperty(preson, "sex", {
+        // value: 1,
+        // enumerable: true, // 是否可以被枚举
+        // writable: true, // 是否可以被修改
+        // configurable: true, // 是否可以被删除
+
+        // 当检测到sex被调用的时候，get函数调用，返回值就是sex的值
+        get() {
+          console.log("访问sex值为");
+          return number;
+        },
+        // 当检测到sex被修改的时候，set函数调用，参数就是sex的值
+        set(value) {
+          console.log("修改sex值值为" + value);
+          number = value;
+        },
+      });
+
+      //   let number = 18;
+    </script>
+  </body>
+</html>
