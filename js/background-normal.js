@@ -1,1 +1,0 @@
-// document.body.style.backgroundSize = document.body.offsetWidth + "px"
